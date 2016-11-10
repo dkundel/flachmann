@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2015",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "outDir": "../test-out"
+  },
+  "files": [
+    "runner.ts",
+    "test.ts"
+  ]
+}

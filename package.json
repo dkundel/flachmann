@@ -1,0 +1,46 @@
+{
+  "name": "flachmann",
+  "version": "1.0.0-alpha",
+  "description": "A decorator based extension of Express",
+  "main": "lib/index.ts",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/request": "^0.0.33",
+    "chai": "^3.5.0",
+    "request": "^2.78.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkundel/flachmann.git"
+  },
+  "keywords": [
+    "express",
+    "decorators",
+    "typescript",
+    "flask"
+  ],
+  "author": "Dominik Kundel <dominik.kundel@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dkundel/flachmann/issues"
+  },
+  "homepage": "https://github.com/dkundel/flachmann#readme",
+  "scripts": {
+    "build:test": "tsc -p test/tsconfig.json",
+    "test": "npm run build:test && node test-out/test/runner.js"
+  },
+  "dependencies": {
+    "@types/express": "^4.0.33",
+    "@types/lodash": "^4.14.38",
+    "@types/node": "^6.0.46",
+    "@types/pluralize": "^0.0.27",
+    "express": "^4.14.0",
+    "lodash": "^4.16.6",
+    "pluralize": "^3.0.0",
+    "reflect-metadata": "^0.1.8",
+    "typescript": "^2.0.8"
+  }
+}
