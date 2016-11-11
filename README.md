@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/flachmann.svg)]() [![npm](https://img.shields.io/npm/dt/flachmann.svg)]() [![npm](https://img.shields.io/npm/l/flachmann.svg)]()
+
 # flachmann - Resource oriented API development
 
 ## :warning: ATTENTION! :warning: 
