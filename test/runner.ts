@@ -1,8 +1,18 @@
 import * as request from 'request';
 import { assert } from 'chai';
 import { exec } from 'child_process';
+import * as chalk from 'chalk';
 
-const server = exec(`node ${__dirname}/test.js`);
+type Test = [string, {}, string | {}]
+
+const TESTS: Test[] = [
+  ['/ahoy', {}, 'Ahoy from Flachmann!'],
+  ['/people/moin/Dominik', {'x-test-header': 'flachmann'}, { greeting: 'Moin Dominik!'}]
+]
+const TESTING_PORT = 9191;
+
+info(`Start testing server on port ${TESTING_PORT}...`);
+const server = exec(`PORT=${TESTING_PORT} node ${__dirname}/test.js`);
 
 server.stderr.on('data', data => {
   console.error(data);
@@ -17,7 +27,7 @@ server.stdout.on('data', (data: string) => {
 });
 
 server.on('close', () => {
-  console.log('Closed Server');
+  info('Closed server');
 });
 
 process.on('exit', () => {
@@ -25,19 +35,21 @@ process.on('exit', () => {
 });
 
 function runTests() {
+  info('Start tests...');
   const testRequests = TESTS.map(t => test(t[0], t[1], t[2]));
 
   return Promise.all(testRequests).then(() => {
-    console.log('ALL DONE!');
+    success('All tests passed');
     return Promise.resolve();
   }).catch(err => {
-    console.error(err.message);
+    error(err.message);
   });
 }
 
 function test(url, expectedHeader, expectedValue) {
+  info(`Testing URL: ${url}`);
   return new Promise((resolve, reject) => {
-    request(`http://localhost:9999${url}`, (err, response, body) => {
+    request(`http://localhost:${TESTING_PORT}${url}`, (err, response, body) => {
       assert.isNull(err, 'no error returned');
 
       Object.keys(expectedHeader).forEach(header => {
@@ -54,9 +66,14 @@ function test(url, expectedHeader, expectedValue) {
   });
 }
 
-type Test = [string, {}, string | {}]
+function success(msg) {
+  console.log(`${chalk.bold.green('SUCCESS')} ${msg}`);
+}
 
-const TESTS: Test[] = [
-  ['/ahoy', {}, 'Ahoy from Flachmann!'],
-  ['/people/moin/Dominik', {'x-test-header': 'flachmann'}, { greeting: 'Moin Dominik!'}]
-]
+function error(msg) {
+  console.error(`${chalk.bold.red('ERROR')} ${msg}`);
+}
+
+function info(msg) {
+  console.log(`${chalk.bold.cyan('INFO')} ${msg}`);
+}
