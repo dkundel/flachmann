@@ -7,7 +7,7 @@ This is very much work in progress. I started this to learn a bit more about Typ
 
 ## Requirements
 
-This package currently only works with [TypeScript](https://typescriptlang.org) and is an extension to [Express](. 
+This package currently only works with [TypeScript](https://typescriptlang.org) and is an extension to [Express](http://expressjs.com/en/4x/api.html).
 
 ## Installation
 
