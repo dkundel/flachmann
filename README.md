@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/npm/v/flachmann.svg?style=flat-square)]() [![npm](https://img.shields.io/npm/dt/flachmann.svg?style=flat-square)]() [![npm](https://img.shields.io/npm/l/flachmann.svg?style=flat-square)]()
+[![npm](https://img.shields.io/npm/v/flachmann.svg?style=flat-square)](https://npmjs.com/packages/flachmann) [![npm](https://img.shields.io/npm/dt/flachmann.svg?style=flat-square)](https://npmjs.com/packages/flachmann) [![npm](https://img.shields.io/npm/l/flachmann.svg?style=flat-square)](/LICENSE)
 
 # [flachmann](https://npmjs.org/package/flachmann) - Resource oriented API development
 
