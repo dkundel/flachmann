@@ -137,7 +137,7 @@ export default function FlachmannApp(app?: Application): FlachmannApp {
     delete: routeHandlerFactory('delete'),
     put: routeHandlerFactory('put'),
     patch: routeHandlerFactory('patch'),
-    use: routeHandlerFactory('use')
+    all: routeHandlerFactory('all')
   };
 
   return FLACHMANN_APP;
