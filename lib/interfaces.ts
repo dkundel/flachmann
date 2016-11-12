@@ -1,6 +1,6 @@
 import { RequestHandler } from 'express';
 
-export type RequestType = 'get' | 'post' | 'delete' | 'put' | 'patch' | 'use';
+export type RequestType = 'get' | 'post' | 'delete' | 'put' | 'patch' | 'all';
 export type ClassDecorator = (target: Function) => void;
 export type ResourceDecoratorFactory = (nameOrConfig?: string | ResourceConfig) => ClassDecorator;
 export type BaseDecoratorFactory = (config?: BaseConfig) => ClassDecorator; 
@@ -15,7 +15,7 @@ export interface FlachmannApp {
   delete: RouteDecoratorFactory;
   put: RouteDecoratorFactory;
   patch: RouteDecoratorFactory;
-  use: RouteDecoratorFactory;
+  all: RouteDecoratorFactory;
 }
 
 export interface BaseConfig {
