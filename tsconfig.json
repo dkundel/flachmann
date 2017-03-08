@@ -4,9 +4,10 @@
     "target": "es2015",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "outDir": "out"
+    "outDir": "out",
+    "declaration": true
   },
-  "exclude": [
-    "test/"
+  "files": [
+    "lib/index.ts"
   ]
 }

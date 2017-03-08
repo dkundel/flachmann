@@ -2,7 +2,8 @@
   "name": "flachmann",
   "version": "1.0.0-alpha",
   "description": "A decorator based extension of Express",
-  "main": "lib/index.ts",
+  "main": "out/index.js",
+  "types": "out/index",
   "directories": {
     "test": "test"
   },
@@ -31,6 +32,7 @@
   },
   "homepage": "https://github.com/dkundel/flachmann#readme",
   "scripts": {
+    "build": "tsc",
     "build:test": "tsc -p test/tsconfig.json",
     "test": "npm run build:test && node test-out/test/runner.js"
   },
