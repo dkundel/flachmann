@@ -1,6 +1,6 @@
 {
   "name": "flachmann",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-alpha1",
   "description": "A decorator based extension of Express",
   "main": "out/index.js",
   "types": "out/index",
